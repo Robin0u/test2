@@ -5,7 +5,7 @@ body, div {
 
 body {
 	display: flex;
-	background-color: #1a1a1a;
+	background-color: #6A645A;
 	flex-direction: column;
 	align-items: center;
       height: auto;
@@ -15,11 +15,11 @@ body {
 .marquee-container {
 	display: inline-block;
 	margin:10px;
-	font-family: Rubik, sans-serif;
+	font-family: "Anton", sans-serif;
     width: 100%;
     overflow: hidden;
     top: 10px;
-    background-color: #1a1a1a; /* Couleur de fond de la barre */
+    background-color: #6A645A; /* Couleur de fond de la barre */
     color: #FFFFFF; /* Couleur du texte */
 }
 
@@ -198,32 +198,50 @@ body {
   }
 }
 
-.menu {
-  width: 200px;
-  height: 100%;
-  background-color: #333;
-  position: fixed;
-  left: 0;
+.btn {
+  display: inline-block; /* ou display: inline; */
+  width: 6.5em;
+  height: 2.3em;
+  margin: 0.5em;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 0.625em;
+  font-size: 20px;
+  font-weight: bold;
+    text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+button:hover {
+  color: black;
+}
+
+button:after {
+  content: "";
+  background: white;
+  position: absolute;
+  z-index: -1;
+  left: -20%;
+  right: -20%;
   top: 0;
-  overflow-y: auto;
-}
-
-.menu ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.menu ul li {
-  padding: 10px;
-}
-
-.menu ul li a {
+  bottom: 0;
+  transform: skewX(-45deg) scale(0, 1);
+  transition: all 0.5s;
   text-decoration: none;
-  color: #fff;
 }
 
-.content {
-  margin-left: 200px; /* La même largeur que le menu */
-  padding: 20px;
+button:hover:after {
+  transform: skewX(-45deg) scale(1, 1);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+
+menu-button {
+  display: inline-block;
+  text-decoration: none;
 }
